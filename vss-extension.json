@@ -1,12 +1,15 @@
 {
     "manifestVersion": 1,
-    "id": "my-first-extension",
-    "publisher": "",
-    "version": "1.0.0",
-    "name": "My First Extension",
-    "description": "A sample Visual Studio Services extension",
+    "id": "IISAplicationManageinIIS",
+    "publisher": "IISAplicationManageinIIS",
+    "version": "1.0.3",
+    "name": "IIS Aplication Manage in IIS",
+    "description": "创建或更新网站、Web 应用、虚拟目录和应用程序池",
     "public": false,
-    "categories": ["Code"],
+    "categories": ["Build and release"],
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
@@ -14,26 +17,19 @@
     ],
     "contributions": [
         {
-            "id": "my-hub",
-            "type": "ms.vss-web.hub",
+            "id": "IISAplicationManageinIIS.task",
+            "type": "ms.vss-distributed-task.task",
             "targets": [
-                "ms.vss-code-web.code-hub-group"
+                "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "My Hub",
-                "uri": "my-hub.html"
+                "name": "buildAndReleaseTask"
             }
         }
     ],
     "files": [
         {
-            "path": "my-hub.html",
-            "addressable": true
-        },
-        {
-            "path": "node_modules/vss-web-extension-sdk/lib",
-            "addressable": true,
-            "packagePath": "lib"
+            "path": "buildAndReleaseTask"
         }
     ]
 }
